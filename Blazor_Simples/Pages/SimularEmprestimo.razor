@@ -1,20 +1,20 @@
 ﻿@page "/simular"
 
-<h1>Simule seu Empréstimo agora</h1>
-<h4>Com taxa de 2,84%</h4>
+<h3 class="bg-dark rounded-2 text-white">Simule seu Empréstimo agora</h3>
+<h4 class="text-secondary">Com taxa de 2,84%</h4>
 
 <label for="valor">Valor do Empréstimo (R$)</label>
 <br />
-<input @bind="valor" type="number" />
+<input @bind="valor" type="number" class="form-control" />
 <br />
 
 <label for="parcelas">Em quantas Parcelas?</label>
 <br />
-<input @bind="parcelas" type="number" />
+<input @bind="parcelas" type="number" class="form-control" />
 <br />
 <br />
 
-<button @onclick="CalcularEmprestimo">Simular</button>
+<button @onclick="CalcularEmprestimo" class="btn-primary rounded-1" >Simular</button>
 <br />
 <br />
 <label>O total a ser pago será R$<span>@total</span></label>
