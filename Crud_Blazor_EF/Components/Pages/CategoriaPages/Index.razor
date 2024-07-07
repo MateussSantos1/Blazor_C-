@@ -1,0 +1,23 @@
+﻿@page "/categoria"
+@using Microsoft.AspNetCore.Components.QuickGrid
+@inject Crud_Blazor_EF.Data.AppDbContext DB
+@using Crud_Blazor_EF.Models
+
+<PageTitle>Index</PageTitle>
+
+<h1>Index</h1>
+
+<p>
+    <a href="categoria/create">Create New</a>
+</p>
+
+<QuickGrid Class="table" Items="DB.Categorias">
+    <PropertyColumn Property="categoria => categoria.Titulo" />
+    <PropertyColumn Property="categoria => categoria.Descricao" />
+
+    <TemplateColumn Context="categoria">
+        <a href="@($"categoria/edit?id={categoria.Id}")">Edit</a> |
+        <a href="@($"categoria/details?id={categoria.Id}")">Details</a> |
+        <a href="@($"categoria/delete?id={categoria.Id}")">Delete</a>
+    </TemplateColumn>
+</QuickGrid>
